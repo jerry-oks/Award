@@ -11,6 +11,10 @@
 		3B73DDC52AF1253E00F9E620 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B73DDC42AF1253E00F9E620 /* ContentView.swift */; };
 		3B73DDC72AF1253F00F9E620 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B73DDC62AF1253F00F9E620 /* Assets.xcassets */; };
 		3B73DDCA2AF1253F00F9E620 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B73DDC92AF1253F00F9E620 /* Preview Assets.xcassets */; };
+		3B73DDD12AF126F100F9E620 /* AwardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B73DDD02AF126F100F9E620 /* AwardView.swift */; };
+		3B73DDD52AF1344500F9E620 /* BallsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B73DDD42AF1344500F9E620 /* BallsView.swift */; };
+		3B73DDD82AF1811600F9E620 /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 3B73DDD72AF1811600F9E620 /* ConfettiSwiftUI */; };
+		3B73DDDA2AF18C5F00F9E620 /* PlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B73DDD92AF18C5F00F9E620 /* PlaceholderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,9 @@
 		3B73DDC42AF1253E00F9E620 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3B73DDC62AF1253F00F9E620 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B73DDC92AF1253F00F9E620 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3B73DDD02AF126F100F9E620 /* AwardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwardView.swift; sourceTree = "<group>"; };
+		3B73DDD42AF1344500F9E620 /* BallsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallsView.swift; sourceTree = "<group>"; };
+		3B73DDD92AF18C5F00F9E620 /* PlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B73DDD82AF1811600F9E620 /* ConfettiSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,6 +61,9 @@
 			children = (
 				3B73DDC22AF1253E00F9E620 /* AwardApp.swift */,
 				3B73DDC42AF1253E00F9E620 /* ContentView.swift */,
+				3B73DDD02AF126F100F9E620 /* AwardView.swift */,
+				3B73DDD92AF18C5F00F9E620 /* PlaceholderView.swift */,
+				3B73DDD42AF1344500F9E620 /* BallsView.swift */,
 				3B73DDC62AF1253F00F9E620 /* Assets.xcassets */,
 				3B73DDC82AF1253F00F9E620 /* Preview Content */,
 			);
@@ -83,6 +94,9 @@
 			dependencies = (
 			);
 			name = Award;
+			packageProductDependencies = (
+				3B73DDD72AF1811600F9E620 /* ConfettiSwiftUI */,
+			);
 			productName = Award;
 			productReference = 3B73DDBF2AF1253E00F9E620 /* Award.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +125,9 @@
 				Base,
 			);
 			mainGroup = 3B73DDB62AF1253E00F9E620;
+			packageReferences = (
+				3B73DDD62AF1811600F9E620 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
+			);
 			productRefGroup = 3B73DDC02AF1253E00F9E620 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,7 +154,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B73DDD12AF126F100F9E620 /* AwardView.swift in Sources */,
+				3B73DDD52AF1344500F9E620 /* BallsView.swift in Sources */,
 				3B73DDC52AF1253E00F9E620 /* ContentView.swift in Sources */,
+				3B73DDDA2AF18C5F00F9E620 /* PlaceholderView.swift in Sources */,
 				3B73DDC32AF1253E00F9E620 /* AwardApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,8 +298,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -287,9 +307,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.swiftbook.hw.Award;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -307,8 +330,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -316,9 +339,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.swiftbook.hw.Award;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -344,6 +370,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3B73DDD62AF1811600F9E620 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/simibac/ConfettiSwiftUI.git";
+			requirement = {
+				kind = exactVersion;
+				version = 1.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3B73DDD72AF1811600F9E620 /* ConfettiSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3B73DDD62AF1811600F9E620 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
+			productName = ConfettiSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3B73DDB72AF1253E00F9E620 /* Project object */;
 }
