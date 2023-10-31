@@ -57,60 +57,64 @@ struct AwardView: View {
         )
     }
     
-    
     var body: some View {
-        
         ZStack {
-            BallsView(achievementIsUnlocked: $achievementIsUnlocked)
-            ZStack {
+            Circle()
+                .fill(silverGradient)
+                .stroke(.gray, lineWidth: 2)
+            
+            Circle()
+                .fill(.gray)
+                .stroke(silverGradientInverted, lineWidth: 2)
+                .scaleEffect(0.9)
+            
+            ForEach(0..<3) { _ in
                 Circle()
-                    .fill(silverGradient)
-                    .stroke(.gray, lineWidth: 2)
-                Circle()
-                    .fill(.gray)
-                    .stroke(silverGradientInverted, lineWidth: 2)
-                    .scaleEffect(0.9)
-                ForEach(0..<3) {_ in
-                    Circle()
-                        .fill(colorfulGragient)
-                        .scaleEffect(0.65)
-                        .blur(radius: size / 10)
-                        .clipShape(.circle)
-                        .rotationEffect(.degrees(rotationDegrees))
-                        .opacity(colorOpacity)
-                }
-                Image(systemName: "apple.logo")
-                    .resizable()
-                    .scaledToFit()
-                    .scaleEffect(0.4)
-                    .offset(x: 0, y: -size / 40)
-                    .foregroundStyle(.white)
-                    .shadow(color: .white, radius: size / 40)
-                    .shadow(color: .white, radius: 0)
-                    .opacity(appleOpacity)
-                
-                
-                PlaceholderView(size: size)
-                    .opacity(placeholderOpacity)
+                    .fill(colorfulGragient)
+                    .scaleEffect(0.65)
+                    .blur(radius: size / 10)
+                    .clipShape(.circle)
+                    .rotationEffect(.degrees(rotationDegrees))
+                    .opacity(colorOpacity)
             }
-            .frame(width: size, height: size)
-            .onChange(of: achievementIsUnlocked) {
-                withAnimation() {
-                    placeholderOpacity = 0
-                }
-                withAnimation(.easeOut(duration: 2).delay(3.2)) {
-                    colorOpacity = 1
-                }
-                withAnimation(.easeOut(duration: 5).delay(5)) {
-                    appleOpacity = 1
-                }
-                withAnimation(.linear(duration: 10).repeatForever(autoreverses: false).delay(5)) {
-                    rotationDegrees = 360
-                }
-            }
+            
+            Image(systemName: "apple.logo")
+                .resizable()
+                .scaledToFit()
+                .scaleEffect(0.4)
+                .offset(x: 0, y: -size / 40)
+                .foregroundStyle(.white)
+                .shadow(color: .white, radius: size / 40)
+                .shadow(color: .white, radius: 0)
+                .opacity(appleOpacity)
+            
+            PlaceholderView(size: size)
+                .opacity(placeholderOpacity)
+        }
+        .frame(width: size, height: size)
+        .onChange(of: achievementIsUnlocked) { changeValues() }
+    }
+    
+    private func changeValues() {
+        withAnimation() {
+            placeholderOpacity = 0
+        }
+        withAnimation(.easeOut(duration: 2).delay(2.8)) {
+            colorOpacity = 1
+        }
+        withAnimation(.easeOut(duration: 5).delay(4)) {
+            appleOpacity = 1
+        }
+        withAnimation(
+            .linear(duration: 10)
+            .repeatForever(autoreverses: false)
+            .delay(4)
+        ) {
+            rotationDegrees = 360
         }
     }
 }
+
 
 #Preview {
     AwardView(size: 200, achievementIsUnlocked: .constant(true))

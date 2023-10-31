@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct BallsView: View {
-    @Binding var achievementIsUnlocked: Bool
-        
     @State private var size = UIScreen.main.bounds.height * 2
     @State private var rotation = 0.0
     
@@ -39,7 +37,7 @@ struct BallsView: View {
         .rotationEffect(.degrees(rotation))
         .animation(.smooth(duration: 5), value: rotation)
         .animation(.smooth(duration: 5), value: size)
-        .onChange(of: achievementIsUnlocked) {
+        .onAppear {
             size -= size
             rotation = 360
         }
@@ -47,7 +45,7 @@ struct BallsView: View {
 }
 
 #Preview {
-    BallsView(achievementIsUnlocked: .constant(true))
+    BallsView()
 }
 
 struct BallView: View {
