@@ -46,7 +46,7 @@ struct PlaceholderView: View {
                 )
                 
             }
-            .stroke(.background, lineWidth: 10)
+            .stroke(.background, lineWidth: size / 20)
             
             Image(systemName: "questionmark")
                 .resizable()
